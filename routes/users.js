@@ -14,10 +14,10 @@ router.post('/register', (req, res, next) => {
   });
 
   User.adduser(newUser, (err, user) => {
-    if(err){
-      res.json({success: false, msg: "failed to register user"})
+    if(!err){
+      res.json({success: true, msg: "user registered - cool"})
     }else{
-      res.json({sucess: true, msg: "user registered"});
+      res.json({sucess: false, msg: "user registered failed"});
     }
   });
 });
